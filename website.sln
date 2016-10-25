@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1FE300D5-16B9-420F-B92F-9FF57FFFDEDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6B57823-AE8E-4D4C-9CAB-BFE32D52086C}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "website", "src\website\website.xproj", "{949CFB63-ABEB-46F3-82B0-EB14B4218DE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{451267BA-65F9-4273-AF5D-B6C6C00B113D}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "website.test", "test\website.test\website.test.xproj", "{221A6EF0-D2CE-4BB8-AEA0-80B83D14AE67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{949CFB63-ABEB-46F3-82B0-EB14B4218DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949CFB63-ABEB-46F3-82B0-EB14B4218DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949CFB63-ABEB-46F3-82B0-EB14B4218DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949CFB63-ABEB-46F3-82B0-EB14B4218DE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221A6EF0-D2CE-4BB8-AEA0-80B83D14AE67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221A6EF0-D2CE-4BB8-AEA0-80B83D14AE67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221A6EF0-D2CE-4BB8-AEA0-80B83D14AE67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221A6EF0-D2CE-4BB8-AEA0-80B83D14AE67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{949CFB63-ABEB-46F3-82B0-EB14B4218DE4} = {1FE300D5-16B9-420F-B92F-9FF57FFFDEDF}
+		{221A6EF0-D2CE-4BB8-AEA0-80B83D14AE67} = {451267BA-65F9-4273-AF5D-B6C6C00B113D}
+	EndGlobalSection
+EndGlobal

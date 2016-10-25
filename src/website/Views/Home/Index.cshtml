@@ -1,0 +1,154 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model website.Models.ManageViewModels.HomePageViewModel
+
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="row">
+    <div class="col-md-12">
+        <br />
+        <div class="txtcenter">
+            <h1>Welcome to STL</h1>
+            <br />
+            <p>Application allowing the Search Clark to record when they are double booked and at which local authority </p>
+        </div>
+    </div>
+</div>
+
+<br /><br />
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <div class="data_list">
+        <div class="clearfix">
+            <div class="tbl">
+                <table class="Grid" id="mainTable">
+                    <thead>
+                        <tr class="GridHeader">
+                            <th>
+                                Authority Type
+                            </th>
+                            <th>
+                                Authority Name
+                            </th>
+                            <th>
+                                County Council Name
+                            </th>
+                            <th>
+                                Last Review
+                            </th>
+                            <th width="15%"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.councilList)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AuthorityType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AuthorityName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CountyCouncilName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateOfLastReview)
+                                </td>
+                                <td class="tbl_action">
+
+                                    <form asp-area="" asp-controller="Home" asp-action="Index" method="post">
+                                        <input type="hidden" id="CouncilId" name="CouncilId" value="@item.Id" />
+                                        <button type="submit" title="Enter Double Booking">Enter Double Booking</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    if (ViewBag.ShowPopUP)
+    {
+        <div id="promptUserForOptIn" class="popover-wrapper fix">
+            <div class="popover-colorwash"></div>
+            <div class="popover">
+                <a class="close_popup switchdiv" href="#" data-userId="@ViewBag.UserId" data-hide="promptUserForOptIn">x</a>
+                <div class="txtcenter mt40">
+                    <h2>UPDATE DOUBLE BOOKING</h2>
+                </div>
+                <br />
+                <p class="txtcenter">Application allowing the Search Clark to record when they are double booked and at which local authority</p>
+
+                @if (ViewBag.Success)
+                {
+                    <div class="message-success txtcenter">
+                        <p>You have successfull updated the records!</p>
+                    </div>
+                }
+                else
+                {
+                    <form asp-area="" asp-controller="Home" asp-action="Index" method="post">
+                        <fieldset class="form-group">
+                            <legend>Client visit enter double booking</legend>
+                            @Html.HiddenFor(model => model.cVisitModel.CouncilId)
+                            @Html.HiddenFor(model => model.cVisitModel.UpdatedBy)
+                            <ol class="clearfix">
+                                <li>
+                                    <label>Authority name:</label>
+                                    @Html.TextBoxFor(model => model.AuthorityName, new { @class = "date", disabled = true })
+                                </li>
+                                <li>
+                                    <label>Double Booking Date:</label>
+                                    @Html.TextBoxFor(model => model.cVisitModel.DoubleBookingDate, new { @class = "date" })
+                                </li>
+                                <li>
+                                    <label>Comments:</label>
+                                    @Html.TextAreaFor(model => model.cVisitModel.Comments)
+                                </li>
+                            </ol>
+                            <button type="submit" title="Enter Double Booking" class="_btn">SAVE</button>
+                        </fieldset>
+                    </form>
+
+                }
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="txtcenter evenpadding60">
+                <a href="/account/login" class="_btn">LOGIN</a>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('table#mainTable').dataTable({
+                "dom": '<"toolbar">flrtip',
+                "aoColumnDefs": [
+                    { 'bSortable': false, 'aTargets': [2, 3, 4] }
+                ]
+            });
+            $("#filter").appendTo(".toolbar");
+            setTimeout(function () {
+                //Clear success message after 3 seconds
+                $('#div_success').addClass('hide');
+            }, 3000);
+        });
+    </script>
+}

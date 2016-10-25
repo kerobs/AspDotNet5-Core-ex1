@@ -1,0 +1,103 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* buttons and links extension to use brackets: [ click me ] */
+.btn-bracketed::before {
+    display:inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+.btn-bracketed::after {
+    display:inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"]
+{
+    width: 100%;
+}
+
+.txtcenter { text-align:center;}
+.evenpadding60 { padding:60px 0px;}
+.body-content { min-height:600px;}
+._btn { display:inline-block;  background-color:#3e8ddd; padding:10px 20px; color:#ffffff; border:none; margin:20px 0px;}
+
+/*Table*/
+table.Grid th,table.Grid td { padding:5px 3px; font-size:13px;  line-height:1.25;}
+table.Grid { width: 100%; margin:10px 0px; font-size:13px; }
+table.Grid tbody tr td { min-height: 22px; text-align: left;  font-weight: normal; color:#000000;}
+table.Grid tbody tr th {padding: 3px;}
+
+table.Grid tbody tr td.tbl_action { width: 80px; font-size: 12px; }
+
+table.Grid tr td a { color: rgba(0, 138, 191, 0.85); }
+table.Grid tr td a:hover { text-decoration: none; color:#000000; }
+table.Grid tr td input { margin:0px;}
+table td.center { text-align: center; }
+table td.anklnk { text-decoration: none; }
+table td.anklnk:hover { text-decoration: underline; color: #EAB235; cursor: pointer; }
+table.Grid tr { border: 0; width:100%; }
+table.Grid tr:nth-child(2n) { background-color: #e5e5e5; }
+table.Grid tr.GridHeader { border: 1px solid #bcbdbd; border-radius: 3px 3px 3px 3px; background-color:#3e8ddd;  }
+tr.GridHeader th { height: 35px; line-height: 14px; color: #ffffff; text-align: left; padding: 0px 3px; font-weight: 400; }
+tr.GridHeader a { color: #eb140a; text-decoration: none; }
+tr.GridHeader a:hover { color: #eb140a; text-decoration: underline; }
+
+.paginate_button { display:inline-block; margin-right:10px;}
+.paginate_button.current { color:#eb140a;}
+
+
+/*Pop Over*/
+
+.popover-colorwash { background-color:rgba(0,0,0,.4); width:100%; height:100%; position:fixed; top:0px; left:0px;z-index:1 }
+.popover-wrapper { position:absolute; top:0px; left:0;  width:100%;  z-index:999; color:#ffffff;}
+.popover { background-color:#000000; width:90%; max-width:640px; min-height:200px; margin:100px auto; padding:2%;  position:relative; z-index:999; display:block; }
+
+.close_popup { position:absolute; right:1rem; top:1rem; font-size:27px; display:block; cursor:pointer; text-decoration:none !important; border:1px solid #ffffff; height:24px; width:24px; line-height:18px; text-align:center; color:#ffffff; padding:0px; margin:0px;}
+.close_popup:hover{ border:1px solid #3e8ddd; color:#3e8ddd;}
+
+.pcontainer { position:relative;}
+.popover input[type="submit"] { border:1px solid #fff !important; color:#ffffff !important;}
+
+/*Forms*/
+fieldset input, fieldset textarea {color:#000000; border:1px solid #e5e5e5; }
+fieldset legend { display:none; }
+fieldset  ol { margin:20px 0px; padding:0px;  }
+fieldset  ol li { list-style:none; margin-bottom:5px;}
+fieldset  ol li label { display:block; font-weight:300; }
+fieldset  ol li input { max-width:400px; width:90%; display :block;  height:35px; }
+fieldset  ol li textarea { max-width:400px; width:90%; display :block;  height:100px; }
+.message-success { color:#EAB235; border:1px solid #ffffff; padding:5px 2px ; max-width:400px; width:90%; margin:100px auto;}
+.message-success p { margin:0px; font-size:12px;}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Hide captions */
+  .carousel-caption {
+    display: none
+  }
+}

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<website.Models.Council>
+
+@{
+    ViewData["Title"] = "Report";
+}
+<h2>Report</h2>
+<br />
+<p>-	Create a report showing the names and dates of local authority double bookings.  It should include a summary of the number of double bookings in the last month, and a list of the Search Clerks, their email addresses, and the dates the double booking occurred on.</p>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="txtcenter evenpadding60">            
+            <form asp-area="" asp-controller="Home" asp-action="Report" method="post">
+                 <button type="submit" title="Get report" class="_btn">Local authority double booking</button>
+            </form>
+        </div>
+    </div>
+</div>
