@@ -1,5 +1,5 @@
---temp-output:Z:\Robin\_task2\website\test\website.test\obj\Debug\netcoreapp1.0\
---out:Z:\Robin\_task2\website\test\website.test\bin\Debug\netcoreapp1.0\website.test.dll
+--temp-output:Z:\Robin\_GitHub\AspDotNet5-Core-ex1\test\website.test\obj\Debug\netcoreapp1.0\
+--out:Z:\Robin\_GitHub\AspDotNet5-Core-ex1\test\website.test\bin\Debug\netcoreapp1.0\website.test.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -208,5 +208,7 @@
 --reference:C:\Users\Robin\.nuget\packages\xunit.extensibility.execution\2.1.0\lib\dotnet\xunit.execution.dotnet.dll
 --reference:C:\Users\Robin\.nuget\packages\xunit.runner.reporters\2.1.0\lib\dotnet\xunit.runner.reporters.dotnet.dll
 --reference:C:\Users\Robin\.nuget\packages\xunit.runner.utility\2.1.0\lib\dotnet\xunit.runner.utility.dotnet.dll
---reference:Z:\Robin\_task2\website\src\website\bin\Debug\netcoreapp1.0\website.dll
-Z:\Robin\_task2\website\test\website.test\CouncilService_IsCouncilServiceShould.cs
+--reference:Z:\Robin\_GitHub\AspDotNet5-Core-ex1\src\website\bin\Debug\netcoreapp1.0\website.dll
+Z:\Robin\_GitHub\AspDotNet5-Core-ex1\test\website.test\BaseTestClass.cs
+Z:\Robin\_GitHub\AspDotNet5-Core-ex1\test\website.test\CouncilService_Test.cs
+Z:\Robin\_GitHub\AspDotNet5-Core-ex1\test\website.test\HomeControllerTest.cs

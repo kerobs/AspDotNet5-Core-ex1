@@ -15,15 +15,11 @@ namespace website.Controllers
     {
         private readonly ICouncilRepository _councilService;
         private readonly ICouncilVisitRepository _councilVisitService;
-        private HttpContext _context;
-
-
-        public HomeController(ICouncilRepository councilService, ICouncilVisitRepository councilVisitService, IHttpContextAccessor contextAccessor)
+   
+        public HomeController(ICouncilRepository councilService, ICouncilVisitRepository councilVisitService)
         {
             _councilService = councilService;
             _councilVisitService = councilVisitService;
-            _context = contextAccessor.HttpContext;
-
         }
 
         public IActionResult Index()
@@ -34,7 +30,7 @@ namespace website.Controllers
             model.cVisitModel = null;
             ViewBag.ShowPopUP = false;
             ViewBag.Success = false;
-            return View(model);
+            return View("Index", model);
         }
 
         [HttpPost]
@@ -77,7 +73,7 @@ namespace website.Controllers
         }
 
         [HttpPost]
-        public void Report(int Id)
+        public void GetReport()
         {
             _councilVisitService.GetLocalAuthorityDoubleBookingStats(HttpContext);
         }
